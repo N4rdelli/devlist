@@ -1,9 +1,38 @@
-import Title from '../Title/Title'
-import styles from './CreateNewTask.module.css'
+import { useState } from 'react';
+import Title from '../Title/Title';
+import styles from './CreateNewTask.module.css';
+
+import addIcon from "../../assets/icon-add.svg";
 
 const CreateNewTask = () => {
+    const [inputValue, setInputValue] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (inputValue.length){
+            setInputValue("")
+        }
+    }
+
+    const handleChange = (e) => {
+        setInputValue(e.target.value);
+    }
+
   return (
-    <Title iconName={"trash"}> </Title>
+    <div className={styles.container}>
+        <Title iconName={"pencil"} text={"Criar nova tarefa"} />
+        <form onSubmit={} className={styles.inputContainer}>
+            <input
+            className={styles.inputText}
+            type="text"
+            autoFocus
+            placeholder='Nome da tarefa'
+            />
+            <button type='submit'>
+                <img src={addIcon} alt="Adicionar tarefa" />
+            </button>
+        </form>
+    </div>
   )
 }
 

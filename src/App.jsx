@@ -6,9 +6,16 @@ import Header from "./components/Header/Header";
 const App = () => {
   return (
     <>
+    <div className="container">
+
       <Header />
 
-      <CreateNewTask />
+      <section className="content">
+        <CreateNewTask />
+      </section>
+
+    </div>
+
     </>
   );
 };
